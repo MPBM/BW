@@ -12,10 +12,15 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		gameObject.transform.position += speed;
+
+		if (Input.GetMouseButtonDown (0)) {
+			speed = -speed;
+		}
 	}
 
 	void OnCollisionEnter2D(Collision2D obj){
 		if (obj.collider.tag == "Wall") {
+			Debug.Log ("Destroy");
 			speed = -speed;
 		}
 	}
