@@ -20,7 +20,7 @@ public class Player : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D obj){
 		if (obj.collider.tag == "Wall") {
-			Debug.Log ("Destroy");
+			Debug.Log ("Game Over");
 			speed = -speed;
 		}
 	}
