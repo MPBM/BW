@@ -5,16 +5,18 @@ public class Floor : MonoBehaviour {
 	public Sprite Black;
 	public Sprite White;
 	SpriteRenderer mainRenderer;
-	GameObject[] floors;
+	Player player;
+	Floors floors;
 
 	// Use this for initialization
 	void Start () {
-		floors = GameObject.FindGameObjectsWithTag("Floor");
+		player = GameObject.Find ("Player").GetComponent<Player>();
+		floors = GameObject.Find ("Floors").GetComponent<Floors>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetMouseButtonDown (0)) {
+		if (Input.GetMouseButtonDown (0) && player.canChange) {
 			mainRenderer = gameObject.GetComponent<SpriteRenderer> ();
 
 			if (mainRenderer.sprite == Black) {
@@ -28,10 +30,8 @@ public class Floor : MonoBehaviour {
 				
 		}
 	}
-
+		
 	void OnTriggerExit2D(Collider2D obj){
-		for (var i = 0; i < floors.Length; i++) {
-			floors [i].collider2D.isTrigger = false;
-		}
+		floors.triggerOff ();
 	}
 }

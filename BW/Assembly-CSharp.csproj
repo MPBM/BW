@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Camera.cs" />
      <Compile Include="Assets\Scripts\Floor.cs" />
+     <Compile Include="Assets\Scripts\Floors.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Wall.cs" />
